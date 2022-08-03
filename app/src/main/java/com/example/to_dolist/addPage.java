@@ -16,13 +16,11 @@ public class addPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_page);
-        MainActivity.count++;
-        System.out.println("new2");
     }
 
     public void addTask(View view) {
         EditText text = (EditText)findViewById(R.id.taskName);
-        MainActivity.str = text.getText().toString();
+        MainActivity.list.add(text.getText().toString());
         Intent nextPage = new Intent(this, MainActivity.class);
         startActivity(nextPage);
     }

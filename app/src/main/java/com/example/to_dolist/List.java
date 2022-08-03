@@ -1,26 +1,33 @@
 package com.example.to_dolist;
 
-import android.text.Editable;
-
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class List {
 
-    private static LinkedList<String> taskList ;
+    private static ArrayList<String> list;
 
-    public void list(){
-        this.taskList = new LinkedList();
+    public List() {
+        list = new ArrayList<String>();
     }
 
-    public static String getList(){
-        return taskList.getFirst();
+    public void add(String str){
+        this.list.add(str);
     }
 
-    public static void  addList(Editable text){
-        taskList.add(text.toString());
+    public void remove(int index){
+        this.list.remove(index);
     }
 
-    public static Boolean  isEmpty(){
-        return (taskList.size() == 0)? true: false;
+    public String getString(int index){
+        return this.list.get(index);
     }
+
+    public void setString(int index, String str){
+        this.list.set(index, str);
+    }
+
+    public int getSize(){
+        return this.list.size();
+    }
+
 }
