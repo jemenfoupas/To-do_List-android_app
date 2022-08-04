@@ -12,16 +12,22 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class addPage extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_page);
+
+        EditText text = findViewById(R.id.taskName);
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+            int value = extras.getInt("key");
+            text.setText(MainActivity.list.getName(value));
+        }
     }
 
     public void addTask(View view) {
         EditText text = findViewById(R.id.taskName);
-        System.out.println(text.getText().toString());
         if(text.getText().toString().equals("")){
             Snackbar notice = Snackbar.make(view, "Empty", 1000);
             notice.show();
@@ -29,5 +35,18 @@ public class addPage extends AppCompatActivity {
             MainActivity.list.add(text.getText().toString());
             startActivity(new Intent(this, MainActivity.class));
         }
+    }
+
+    public void backHome(View view) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
+    public void delete(View view) {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            int value = extras.getInt("key");
+            MainActivity.list.remove(value);
+        }
+        startActivity(new Intent(this, MainActivity.class));
     }
 }
