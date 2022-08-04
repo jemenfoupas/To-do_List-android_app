@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import com.google.android.material.snackbar.Snackbar;
 
+
 public class addPage extends AppCompatActivity {
 
 
@@ -19,9 +20,14 @@ public class addPage extends AppCompatActivity {
     }
 
     public void addTask(View view) {
-        EditText text = (EditText)findViewById(R.id.taskName);
-        MainActivity.list.add(text.getText().toString());
-        Intent nextPage = new Intent(this, MainActivity.class);
-        startActivity(nextPage);
+        EditText text = findViewById(R.id.taskName);
+        System.out.println(text.getText().toString());
+        if(text.getText().toString().equals("")){
+            Snackbar notice = Snackbar.make(view, "Empty", 1000);
+            notice.show();
+        }else{
+            MainActivity.list.add(text.getText().toString());
+            startActivity(new Intent(this, MainActivity.class));
+        }
     }
 }

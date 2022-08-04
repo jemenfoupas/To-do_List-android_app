@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#919191"
+    android:background="@drawable/sunset_1373171__480"
     tools:context=".MainActivity">
 
     <Button
@@ -24,7 +24,7 @@
         android:id="@+id/textView"
         android:layout_width="250dp"
         android:layout_height="350dp"
-        android:background="#FFFCFC"
+        android:background="@drawable/rounded_corner_view"
         android:paddingLeft="10px"
         android:paddingTop="10px"
         android:paddingRight="10px"
@@ -34,19 +34,23 @@
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#FFFFFF"
+        android:layout_width="170dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:background="#00FFFFFF"
         android:text="To-do List"
+        android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

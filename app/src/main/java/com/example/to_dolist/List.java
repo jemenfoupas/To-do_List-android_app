@@ -7,7 +7,7 @@ public class List {
     private static ArrayList<String> list;
 
     public List() {
-        list = new ArrayList<String>();
+        this.list = new ArrayList<String>();
     }
 
     public void add(String str){
